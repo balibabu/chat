@@ -1,0 +1,6 @@
+{
+  "name": "OpenAI Compatible Chat",
+  "description": "A dark-themed chat application supporting any OpenAI-compatible API with collapsible reasoning, local persistence, and auto-expiring API keys.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
