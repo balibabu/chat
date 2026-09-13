@@ -84,7 +84,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </div>
             <div>
               <h1 className="text-sm font-semibold text-zinc-100 tracking-tight">OpenAI Chat</h1>
-              <p className="text-[11px] text-zinc-500">Universal Client</p>
             </div>
           </div>
           <button
@@ -214,7 +213,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             onClick={onOpenSettings}
             className="p-2.5 rounded-xl bg-zinc-900/60 border border-zinc-800/80 hover:border-zinc-700 cursor-pointer transition-colors text-xs"
           >
-            <div className="flex items-center justify-between mb-1">
+            <div className="flex items-center justify-between">
               <div className="flex items-center gap-1.5 text-zinc-300 font-medium">
                 {keyExpiry.hasKey ? (
                   <Shield className="w-3.5 h-3.5 text-emerald-400" />
@@ -229,24 +228,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 {keyExpiry.hasKey ? 'Active' : 'Missing'}
               </span>
             </div>
-            <p className="text-[11px] text-zinc-500 leading-tight">
-              {keyExpiry.hasKey
-                ? `Deletes in ${keyExpiry.daysRemaining ?? 7}d if unused`
-                : 'Configure API key in settings'}
-            </p>
           </div>
 
           <button
             type="button"
             id="sidebar-settings-btn"
             onClick={onOpenSettings}
-            className="w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900 transition-colors"
+            className="w-full flex items-center px-3 py-2 rounded-xl text-xs text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900 transition-colors"
           >
             <div className="flex items-center gap-2">
               <Settings className="w-4 h-4" />
-              <span>Settings & API</span>
+              <span>Settings</span>
             </div>
-            <span className="text-[10px] text-zinc-600 font-mono">Config</span>
           </button>
         </div>
       </aside>

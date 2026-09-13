@@ -6,7 +6,6 @@ import {
   Send,
   Square,
   Key,
-  Brain,
   Sparkles,
   ArrowDown,
 } from 'lucide-react';
@@ -157,9 +156,7 @@ export const ChatArea: React.FC<ChatAreaProps> = ({
             >
               <div className="flex items-center gap-2.5">
                 <Key className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>
-                  No API key configured. Please enter your API token to start chatting.
-                </span>
+                <span>No API key configured.</span>
               </div>
               <button
                 type="button"
@@ -178,24 +175,9 @@ export const ChatArea: React.FC<ChatAreaProps> = ({
                 <Sparkles className="w-7 h-7" />
               </div>
 
-              <div className="space-y-2 max-w-md mx-auto">
-                <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-zinc-100">
-                  OpenAI Compatible Chat
-                </h2>
-                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                  Connect any OpenAI-compatible provider with live collapsible reasoning, markdown rendering, and local persistence.
-                </p>
-              </div>
-
-              <div className="flex items-center justify-center gap-2 text-xs text-zinc-500 font-mono">
-                <span className="flex items-center gap-1 bg-zinc-900/80 px-2.5 py-1 rounded-md border border-zinc-800">
-                  <Brain className="w-3 h-3 text-indigo-400" />
-                  Collapsible Reasoning
-                </span>
-                <span className="bg-zinc-900/80 px-2.5 py-1 rounded-md border border-zinc-800">
-                  7-Day Key Expiry
-                </span>
-              </div>
+              <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-zinc-100">
+                OpenAI Compatible Chat
+              </h2>
 
               <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-left max-w-2xl mx-auto">
                 {SAMPLE_PROMPTS.map((prompt, idx) => (
@@ -285,11 +267,6 @@ export const ChatArea: React.FC<ChatAreaProps> = ({
                 <Send className="w-4 h-4" />
               </button>
             )}
-          </div>
-
-          <div className="flex items-center justify-between px-2 pt-1.5 text-[11px] text-zinc-600">
-            <span>Model: <code className="text-zinc-400 font-mono">{config.model}</code></span>
-            <span>Keys deleted automatically if unused for 7 days</span>
           </div>
         </div>
       </div>

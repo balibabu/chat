@@ -122,7 +122,6 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
             </div>
             <div>
               <h2 className="text-base font-semibold text-zinc-100">API Configuration</h2>
-              <p className="text-xs text-zinc-400">OpenAI compatible endpoints & models</p>
             </div>
           </div>
           <button
@@ -172,9 +171,6 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               required
               className="w-full px-3.5 py-2 text-sm bg-zinc-950 border border-zinc-800 rounded-xl text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:border-indigo-500 font-mono"
             />
-            <p className="text-[11px] text-zinc-500">
-              Supports any OpenAI-compatible format. Trailing <code className="text-zinc-400">/chat/completions</code> will be handled automatically.
-            </p>
           </div>
 
           <div className="space-y-1.5">
@@ -217,20 +213,10 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               </button>
             </div>
 
-            <div className="mt-2 p-3 bg-zinc-950 border border-zinc-800/80 rounded-xl flex items-start gap-2.5 text-xs text-zinc-400">
-              <Shield className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-              <div className="space-y-0.5">
-                <p className="text-zinc-300 font-medium">Local Storage & Inactivity Expiry</p>
-                <p className="text-[11px] text-zinc-500 leading-normal">
-                  Your token is stored exclusively in your local browser storage. For security, it is automatically purged if you do not use the app for 7 consecutive days.
-                </p>
-                {keyExpiry.hasKey && keyExpiry.daysRemaining !== null && (
-                  <p className="text-[11px] text-emerald-400/90 font-mono pt-1">
-                    Status: Active • Auto-deletion in ~{keyExpiry.daysRemaining} days of inactivity
-                  </p>
-                )}
-              </div>
-            </div>
+            <p className="flex items-center gap-1.5 text-[11px] text-zinc-500">
+              <Shield className="w-3.5 h-3.5 text-emerald-400/80 shrink-0" />
+              Stored only in this browser; cleared after 7 days unused.
+            </p>
           </div>
 
           <div className="space-y-1.5">
